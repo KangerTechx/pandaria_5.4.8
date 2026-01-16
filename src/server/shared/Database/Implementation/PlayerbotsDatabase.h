@@ -31,7 +31,7 @@ class PlayerbotsDatabaseConnection : public MySQLConnection
         void DoPrepareStatements();
 };
 
-enum PlayerbotsDatabaseStatements : uint32
+enum PlayerbotsDatabaseStatements
 {
     /*  Naming standard for defines:
         {DB}_{SEL/INS/UPD/DEL/REP}_{Summary of data changed}
