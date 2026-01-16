@@ -18,7 +18,18 @@
 #ifndef _PlayerbotsDatabase_H
 #define _PlayerbotsDatabase_H
 
+#include "DatabaseWorkerPool.h"
 #include "MySQLConnection.h"
+
+class PlayerbotsDatabaseConnection : public MySQLConnection
+{
+        public:
+        PlayerbotsDatabaseConnection(MySQLConnectionInfo& connInfo, ConnectionFlags index)
+            : MySQLConnection(connInfo, index) { }
+
+        //- Loads database type specific prepared statements
+        void DoPrepareStatements();
+};
 
 enum PlayerbotsDatabaseStatements : uint32
 {
@@ -80,17 +91,6 @@ enum PlayerbotsDatabaseStatements : uint32
     PLAYERBOTS_INS_EQUIP_CACHE_NEW,
     PLAYERBOTS_DEL_EQUIP_CACHE_NEW,
     MAX_PLAYERBOTS_STATEMENTS
-};
-
-class TC_DATABASE_API PlayerbotsDatabaseConnection : public MySQLConnection
-{
-public:
-    typedef PlayerbotsDatabaseStatements Statements;
-    //- Constructors for sync and async connections
-    PlayerbotsDatabaseConnection(MySQLConnectionInfo& connInfo, ConnectionFlags connectionFlags);
-    ~PlayerbotsDatabaseConnection();
-    //- Loads database type specific prepared statements
-    void DoPrepareStatements() override;
 };
 
 #endif
