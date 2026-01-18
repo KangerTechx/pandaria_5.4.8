@@ -585,3 +585,7 @@ uint32 AreaTrigger::GetVisualForTarget(Player const* target) const
 
     return m_uint32Values[AREATRIGGER_FIELD_SPELL_VISUAL_ID];
 }
+
+// AreaTrigger
+template<> std::unordered_map<uint64, AreaTrigger*> HashMapHolder<AreaTrigger>::m_objectMap;
+template<> std::mutex HashMapHolder<AreaTrigger>::i_lock;

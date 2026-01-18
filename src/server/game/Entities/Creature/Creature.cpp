@@ -2961,3 +2961,7 @@ float Creature::GetSparringHealthLimit() const
 {
     return sObjectMgr->GetSparringHealthLimitFor(GetEntry());
 }
+
+// Creature
+template<> std::unordered_map<uint64, Creature*> HashMapHolder<Creature>::m_objectMap;
+template<> std::mutex HashMapHolder<Creature>::i_lock;

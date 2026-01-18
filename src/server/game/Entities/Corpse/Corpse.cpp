@@ -208,3 +208,7 @@ bool Corpse::IsExpired(time_t t) const
     else
         return m_time < t - 3 * DAY;
 }
+
+// Corpse
+template<> std::unordered_map<uint64, Corpse*> HashMapHolder<Corpse>::m_objectMap;
+template<> std::mutex HashMapHolder<Corpse>::i_lock;

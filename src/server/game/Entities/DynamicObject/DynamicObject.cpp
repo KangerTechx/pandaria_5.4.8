@@ -342,3 +342,7 @@ uint32 DynamicObject::GetVisualForTarget(Player const* target) const
 
     return m_uint32Values[DYNAMICOBJECT_FIELD_TYPE_AND_VISUAL_ID];
 }
+
+// DynamicObject
+template<> std::unordered_map<uint64, DynamicObject*> HashMapHolder<DynamicObject>::m_objectMap;
+template<> std::mutex HashMapHolder<DynamicObject>::i_lock;

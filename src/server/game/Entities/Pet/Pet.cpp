@@ -1903,3 +1903,7 @@ bool TempSummon::IsMinorGuardian() const
         return true;
     return GetEntry() != 28524; // Bloodworm...
 }
+
+// Pet
+template<> std::unordered_map<uint64, Pet*> HashMapHolder<Pet>::m_objectMap;
+template<> std::mutex HashMapHolder<Pet>::i_lock;
