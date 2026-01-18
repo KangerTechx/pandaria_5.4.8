@@ -446,57 +446,12 @@ void ObjectAccessor::UnloadAll()
 
 /// Global definitions for the hashmap storage
 
-//template class HashMapHolder<Player>;
-//template class HashMapHolder<Pet>;
-//template class HashMapHolder<GameObject>;
-//template class HashMapHolder<DynamicObject>;
-//template class HashMapHolder<Creature>;
-//template class HashMapHolder<Corpse>;
-
-/// Définition explicite des membres statiques de HashMapHolder
-
-// Player
-template<>
-HashMapHolder<Player>::MapType HashMapHolder<Player>::m_objectMap;
-
-template<>
-HashMapHolder<Player>::LockType HashMapHolder<Player>::i_lock;
-
-// Creature
-template<>
-HashMapHolder<Creature>::MapType HashMapHolder<Creature>::m_objectMap;
-
-template<>
-HashMapHolder<Creature>::LockType HashMapHolder<Creature>::i_lock;
-
-// GameObject
-template<>
-HashMapHolder<GameObject>::MapType HashMapHolder<GameObject>::m_objectMap;
-
-template<>
-HashMapHolder<GameObject>::LockType HashMapHolder<GameObject>::i_lock;
-
-// Pet
-template<>
-HashMapHolder<Pet>::MapType HashMapHolder<Pet>::m_objectMap;
-
-template<>
-HashMapHolder<Pet>::LockType HashMapHolder<Pet>::i_lock;
-
-// DynamicObject
-template<>
-HashMapHolder<DynamicObject>::MapType HashMapHolder<DynamicObject>::m_objectMap;
-
-template<>
-HashMapHolder<DynamicObject>::LockType HashMapHolder<DynamicObject>::i_lock;
-
-// Corpse
-template<>
-HashMapHolder<Corpse>::MapType HashMapHolder<Corpse>::m_objectMap;
-
-template<>
-HashMapHolder<Corpse>::LockType HashMapHolder<Corpse>::i_lock;
-
+template class HashMapHolder<Player>;
+template class HashMapHolder<Pet>;
+template class HashMapHolder<GameObject>;
+template class HashMapHolder<DynamicObject>;
+template class HashMapHolder<Creature>;
+template class HashMapHolder<Corpse>;
 
 template Player* ObjectAccessor::GetObjectInWorld<Player>(uint32 mapid, float x, float y, uint64 guid, Player* /*fake*/);
 template Pet* ObjectAccessor::GetObjectInWorld<Pet>(uint32 mapid, float x, float y, uint64 guid, Pet* /*fake*/);
