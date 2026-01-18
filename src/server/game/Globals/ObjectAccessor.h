@@ -216,12 +216,5 @@ class ObjectAccessor
 };
 
 
-extern template class HashMapHolder<Player>;
-extern template class HashMapHolder<Creature>;
-extern template class HashMapHolder<GameObject>;
-extern template class HashMapHolder<Pet>;
-extern template class HashMapHolder<DynamicObject>;
-extern template class HashMapHolder<Corpse>;
-
 #define sObjectAccessor ACE_Singleton<ObjectAccessor, ACE_Null_Mutex>::instance()
 #endif
