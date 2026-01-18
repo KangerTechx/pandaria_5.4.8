@@ -18,7 +18,6 @@
 #ifndef _LOGINDATABASE_H
 #define _LOGINDATABASE_H
 
-#include "DatabaseWorkerPool.h"
 #include "MySQLConnection.h"
 
 class LoginDatabaseConnection : public MySQLConnection
