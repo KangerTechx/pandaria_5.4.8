@@ -32464,7 +32464,3 @@ bool Player::CanRollForLootIn(WorldObject const* obj) const
 
     return true;
 }
-
-// Player
-template<> std::unordered_map<uint64, Player*> HashMapHolder<Player>::m_objectMap;
-template<> std::mutex HashMapHolder<Player>::i_lock;

@@ -2636,7 +2636,3 @@ void GameObject::GetRespawnPosition(float &x, float &y, float &z, float* ori /* 
     if (ori)
         *ori = GetOrientation();
 }
-
-// GameObject
-template<> std::unordered_map<uint64, GameObject*> HashMapHolder<GameObject>::m_objectMap;
-template<> std::mutex HashMapHolder<GameObject>::i_lock;
