@@ -31,6 +31,8 @@ class PlayerbotsDatabaseConnection : public MySQLConnection
         void DoPrepareStatements();
 };
 
+typedef DatabaseWorkerPool<PlayerbotsDatabaseConnection> PlayerbotsDatabaseWorkerPool;
+
 enum PlayerbotsDatabaseStatements
 {
     /*  Naming standard for defines:
